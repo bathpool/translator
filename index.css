@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+    width: 390px;
+    height: 780px;
+    margin: 0 auto auto auto;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.upper-section {
+    height: 213px;
+    margin: 0 0 auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("assets/worldmap.png");
+    background-position: 40%;
+}
+
+.parrot img {
+    width: 95px;
+    height: 85px;
+    margin-right: 10px;
+}
+
+.title {
+    text-align: start;
+}
+
+.title h1{
+    font-family: Big Shoulders Display;
+    font-weight: 800;
+    font-size: 43px;
+    line-height: 150%;
+    color: #32CD32;
+}
+
+.main-section {
+    margin: 243px 14px 32px 14px;
+}
+
+#form-select {
+    display: flex;
+    flex-direction: column;
+}
