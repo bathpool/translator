@@ -6,6 +6,7 @@
 
 
 body {
+    font-family: "Poppins", sans-serif;
     width: 390px;
     height: 780px;
     margin: 0 auto auto auto;
@@ -34,18 +35,109 @@ body {
 }
 
 .title h1{
-    font-family: Big Shoulders Display;
+    font-family: "Big Shoulders", sans-serif;
     font-weight: 800;
     font-size: 43px;
-    line-height: 150%;
     color: #32CD32;
+
 }
 
+.title h4{
+
+    font-weight: 600;
+    font-size: 12.21px;
+    color: #FFFFFF;
+}
+
+
 .main-section {
-    margin: 243px 14px 32px 14px;
+    height: 505px;
+    margin: 31px 14px 0 14px;
+    border: 4px solid #252F42;
+    border-radius: 15px;
+}
+
+#form-input-label {
+    font-weight: 700;
+    font-size: 20px;
+    color: #035A9D;
+    margin-top: 23px;
+}
+
+#textarea {
+    width: 317px;
+    height: 118px;
+    opacity: 1;
+    border-radius: 8px;
+    margin-top: 23px;
+    background-color: #EFF0F4;
 }
 
 #form-select {
     display: flex;
     flex-direction: column;
+}
+
+#form-select-label {
+    font-weight: 700;
+    font-size: 20px;
+    color: #035A9D;
+    margin-top: 15px;
+}
+
+.container {
+    width: 317px;
+    height: 118px;
+}
+
+.radio-selection {
+
+    font-weight: 700;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-left: 50px;
+    margin-top: 15px;
+}
+
+input {
+    accent-color: #008BF7;
+}
+
+.selection-item-label {
+    margin: 20px 15px 20px 15px;
+}
+
+#text-result {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    resize: none;
+    /* Use opacity to initially hide the element */
+    opacity: 0;
+    /* Block pointer events so radio buttons underneath can be clicked */
+    pointer-events: none; 
+    /* Add a smooth transition for the fade effect */
+    transition: opacity 0.5s ease-in-out;
+}
+
+#text-result.active {
+  opacity: 1;
+  pointer-events: auto; /* Enable pointer events when active */
+}
+
+
+#btn {
+    width: 322px;
+    height: 50px;
+    opacity: 1;
+    border-radius: 6px;
+    background-color: #035A9D;
+    font-weight: 700;
+    font-size: 24px;
+    color: white;
 }
