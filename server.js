@@ -3,7 +3,7 @@ import http from 'node:http'
 import path from 'node:path'
 import fs from 'node:fs/promises'
 import url from 'node:url'
-const PORT = 8000
+const PORT = process.env.PORT || 8000
 const __dirname = import.meta.dirname
 
 const server = http.createServer(async (req, res) => {
