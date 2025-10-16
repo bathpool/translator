@@ -130,6 +130,16 @@ input {
     border-radius: 8px;
 }
 
+.translation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    font-size: 20px;
+    color: #000000;
+}
+
 #btn {
     width: 322px;
     height: 50px;

@@ -4,14 +4,15 @@ import path from 'node:path'
 import fs from 'node:fs/promises'
 import url from 'node:url'
 const PORT = 8000
-
 const __dirname = import.meta.dirname
+
 const server = http.createServer(async (req, res) => {
     if (req.url === '/api') {
         let body = ''
         for await (const chunk of req) {
             body += chunk
         }
+        console.log('input received')
         await getTranslation(JSON.parse(body), res)
     } else {
         await serveStatic(req, res, __dirname)
@@ -33,14 +34,13 @@ async function getTranslation(req, res) {
     })
 
     const returnObj = {
-        result: response.text
+        translation: response.text
     }
-
-    sendResponse(res, 200, 'application/json', returnObj)
+    console.log('translation received')
+    console.log(response.text)
+    sendResponse(res, 200, 'application/json', JSON.stringify(returnObj))
 
 } 
-
-
 
  async function serveStatic(req, res, baseDir) {
 
