@@ -2,5 +2,7 @@
   "dependencies": {
     "@google/genai": "^1.25.0"
   },
-  "type": "module"
+  "type": "module",
+  "start": "node server.js"
+}
 }
