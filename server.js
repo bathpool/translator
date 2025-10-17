@@ -44,6 +44,8 @@ async function getTranslation(req, res) {
 
  async function serveStatic(req, res, baseDir) {
 
+ try {
+
   const filePath = path.join(
     baseDir,
     req.url === '/' ? 'index.html' : req.url
@@ -55,9 +57,17 @@ async function getTranslation(req, res) {
 
     const content = await fs.readFile(filePath)
     sendResponse(res, 200, contentType, content)
-
-
+  
+  } catch (err) {
+    if (err.code === 'ENOENT') {
+      res.status(404).send('Not Found'); // Send a proper 404 response
+    } else {
+      next(err); // Pass other errors to the next handler
+    }
+  }
 }
+
+
 
 function sendResponse(res, statusCode, contentType, payload) {
 
