@@ -62,9 +62,11 @@ async function getTranslation(req, res) {
   
   } catch (err) {
     if (err.code === 'ENOENT') {
-      res.status(404).send('Not Found'); // Send a proper 404 response
+      res.writeHead(404, { 'Content-Type': 'text/plain' });
+      res.end('Not Found');
     } else {
-      next(err); // Pass other errors to the next handler
+      res.writeHead(500, { 'Content-Type': 'text/plain' });
+      res.end('Internal Server Error');
     }
   }
 }
