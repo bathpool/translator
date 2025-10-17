@@ -4,7 +4,9 @@ import path from 'node:path'
 import fs from 'node:fs/promises'
 import url from 'node:url'
 const PORT = process.env.PORT || 8000
-const __dirname = import.meta.dirname
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+const wwwroot = path.join(__dirname, '/')
 
 const server = http.createServer(async (req, res) => {
     if (req.url === '/api') {
@@ -15,7 +17,7 @@ const server = http.createServer(async (req, res) => {
         console.log('input received')
         await getTranslation(JSON.parse(body), res)
     } else {
-        await serveStatic(req, res, __dirname)
+        await serveStatic(req, res, wwwroot)
     }
 })
 
