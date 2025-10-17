@@ -3,6 +3,7 @@ import http from 'node:http'
 import path from 'node:path'
 import fs from 'node:fs/promises'
 import url from 'node:url'
+import { fileURLToPath } from 'url'
 const PORT = process.env.PORT || 8000
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
