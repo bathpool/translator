@@ -1,9 +1,3 @@
-import { GoogleGenAI } from '@google/genai'
-import http from 'node:http'
-import path from 'node:path'
-import fs from 'node:fs/promises'
-import url from 'node:url'
-import { fileURLToPath } from 'url'
 import express from 'express'
 import { apiRoutes } from './routes/apiRoutes.js'
 const PORT = process.env.PORT || 8000

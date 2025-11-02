@@ -1,3 +1,4 @@
+import { GoogleGenAI } from '@google/genai'
 export async function getTranslation(req, res) {
 
     console.log(req.body)
