@@ -10,7 +10,4 @@ app.use('/api', apiRoutes)
 
 // app.listen(PORT, ()=> console.log(`server connected on port ${PORT}`))
 
-
 export default app
-
-
