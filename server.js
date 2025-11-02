@@ -8,7 +8,7 @@ app.use(express.static('public'))
 app.use(express.json());
 app.use('/api', apiRoutes)
 
-app.listen(PORT, ()=> console.log(`server connected on port ${PORT}`))
+// app.listen(PORT, ()=> console.log(`server connected on port ${PORT}`))
 
 
 export default app
